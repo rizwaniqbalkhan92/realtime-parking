@@ -1,0 +1,74 @@
+.cards{
+    width: 100% !important;
+    height: 100vh !important;
+    background-color: aqua !important;
+    display: flex;
+    justify-content: space-around;
+}
+.card1{
+    width: 17% !important;
+    height: 100vh !important;
+}
+.card2{
+    width: 80% !important;
+    height: 100vh !important;
+}
+.feedback{
+    width: 80% !important;
+    margin: 100px auto;
+    height: 90% !important;
+}
+.message{
+    display: flex !important;
+    justify-content: space-between !important;
+  
+}
+.btns{
+    margin-top: 30px;
+
+    height: 30% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.parking{
+    background-color: dimgray !important;
+    height: 100vh !important;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+align-items: flex-start;
+overflow: auto !important;
+}
+
+.avaailableParkingYellow{
+    height: 180px !important;
+    width: 230px !important;
+margin: 20px;
+background-color: yellow !important;
+}
+.avaailableParkingRed{
+    height: 180px !important;
+    width: 230px !important;
+margin: 20px;
+background-color: red !important;
+}
+.availText{
+    font-size: 25px !important;
+    margin-top: 10px !important;
+}
+.messageSend{
+    width: 100% !important;
+    height: 50px !important;
+    margin:20px auto ;
+    background-color: wheat !important;
+}
+.reply{
+    width: 100% !important;
+    height: 50px !important;
+    margin:20px auto ;
+    background-color: greenyellow !important;
+}
+.noreply{
+  display: none;
+}

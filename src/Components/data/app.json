@@ -1,0 +1,56 @@
+{
+  
+"Locations":{
+"Saddar":["lucky star","KMC Parking Plaza","Regal","Jhangir Park"],
+"Gulshan":["GBlock1","GBlock2","GBlock3","GBlock4","GBlock5","GBlock6"],
+"Gulistan-e-Johar":["Block1","Block2","Block3","Al Ahmed","Rao Zebaish","Johar Complex","Safoora"],
+"Malir":["Malir 15","Kala board","Mandi"],
+"Korangi":["korangi # 1","korangi # 2","korangi # 3","korangi # 4","korangi # 5","korangi # 6"],
+"Landhi":["Landhi # 1","Landhi # 2","Landhi # 3","Landhi # 4","Landhi # 5","Landhi # 6"]
+
+
+},
+"Slots":{
+"Lucky star":"50",
+"KMC Parking Plaza":"200",
+"Regal":"70",
+"Jhangir Park":"100",
+"GBlock1":"100",
+"GBlock2":"50",
+"GBlock3":"150",
+"GBlock4":"200"
+,"GBlock5":"200",
+"GBlock6":"60",
+"JBlock1":"100",
+"JBlock2":"20",
+"JBlock3":"100",
+"Al Ahmed":"200",
+"Rao Zebaish":"100",
+"Johar Complex":"60",
+"Safoora":"100",
+"Malir 15":"90",
+"Kala board":"80",
+"Mandi":"70",
+"korangi # 1":"100",
+"korangi # 2":"20",
+"korangi # 3":"100",
+"korangi # 4":"200",
+"korangi # 5":"120",
+"korangi # 6":"20",
+"Landhi # 1":"200",
+"Landhi # 2":"100",
+"Landhi # 3":"140",
+"Landhi # 4":"200",
+"Landhi # 5":"50",
+"Landhi # 6":"40"
+
+
+
+
+
+
+}
+
+
+
+}
