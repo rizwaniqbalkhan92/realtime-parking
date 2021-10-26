@@ -72,3 +72,32 @@ background-color: red !important;
 .noreply{
   display: none;
 }
+.slots{
+display: flex;
+flex-wrap: wrap;
+width: 400px !important;
+/* height: 300px; */
+margin: 0px auto;
+/* border: 1px solid red; */
+justify-content: space-between;
+}
+.slot{
+    width: 70px;
+    height: 70px;
+    border: 1px solid greenyellow;
+}
+.cardBook{
+    width:400px;
+    height: 320px;
+    margin: 100px auto;
+}
+.modalInp{
+    width: 300px !important;
+    margin: 10px 50px !important;
+}
+.modaltext{
+    font-size: 25px !important;
+}
+.modalbtn{
+    margin: 10px 150px !important;
+}
