@@ -8,6 +8,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { TextField, Typography } from '@mui/material'
 import './user.css'
+// import img from '../images/img.jpg'
+import img from '../images/img1.jpg'
 
 
 const Booking = () => {
@@ -33,8 +35,9 @@ const Booking = () => {
 
 
     console.log(dataCheck)
-    console.log(filtereArea)
-    // console.log(filtered)
+ let tsfrom= new Date(timeFrom).getTime()
+    let tsTo=new Date(timeTo).getTime()
+    console.log(timeFrom,timeTo)
     useEffect(() => {
 
         if (data2) {
@@ -118,10 +121,22 @@ const Booking = () => {
         // let date = new Date(dataCheck).getDate()
         // let dateN=new Date(dateM).getDate()
 
-        
+        // if(dataCheck){
+
+        // }
+        // else{
+
+        // }
+
+
+
+        //  working 
         if (!dataCheck || dataCheck.date !== dateM   ) {
           
+
+          
             alert('Your Answer has beeen Submitted--!')
+
             let areaLoc = JSON.parse(area).area
             console.log(areaLoc)
             const db = getDatabase()
@@ -129,9 +144,9 @@ const Booking = () => {
             set(ref(db, `users/booking/${location}/${areaLoc}/${key}`), {
                 location,
                 area: JSON.parse(area).area,
-                // timeFrom,
+                timeFrom,
                 // timeFromInMilli:new Date(timeFrom).getTime(),
-                // timeTo,
+                timeTo,
                 date: dateM,
                 // timeToInMilli:new Date(timeTo).getTime(),
                 slots,
@@ -145,13 +160,114 @@ const Booking = () => {
         
             }
         
-        else {
+        else{
              
-            alert('No Data.. is Available')
+             let tdfrom=new Date(dataCheck.timeFrom).getTime()
+            console.log(tdfrom)
+            let tdTo=new Date(dataCheck.timeTo).getTime()
+
+
+            // if((tsfrom >= tdfrom ) && (tsTo >= tdTo)){
+            //     alert('No Space here1')
+                    
+            //     }
+             if((tsfrom < tdfrom) && (tsTo > tdTo)){
+                alert('No Space here5')
+                    
+                }
+            else if((tsfrom >= tdfrom) && (tsTo <= tdTo)){
+                alert('No Space here3')
+                    
+                }
+            else if((tsfrom <= tdfrom) && (tsTo >= tdTo)){
+                alert('No Space here4')
+                    
+                }
+            else if(tsfrom <= tdfrom  && (tsTo <= tdTo && tsTo > tdfrom) ){
+               
+                alert('No Space here9')
+                    
+                }
+            else if(tsfrom >= tdfrom && (tsTo >= tdTo && tsTo < tdfrom)){
+                alert('No Space here10')
+                    
+                }
+            // else if((tsfrom <= tdfrom   ) && (tsTo <= tdTo )  ){
+               
+            //     alert('No Space here7')
+                    
+            //     }
+            else if((tsfrom >= tdfrom && tsfrom < tdTo) || (tsfrom <= tdfrom && tsTo >= tdTo)){
+                alert('No Space here8')
+                    
+                }
+    //    else if((tsfrom > tdfrom) && (tsTo > tdTo)){
+    //             alert('No Space here1')
+                    
+    //             }
+            else if((tsfrom <= tdfrom ) && (tsTo <= tdTo) ){
+                  alert('Your Answer has beeen Submitted--!')
+
+            let areaLoc = JSON.parse(area).area
+            console.log(areaLoc)
+            const db = getDatabase()
+            const key2 = push(child(ref(db), 'admin/booking')).key;
+            push(ref(db, `users/booking/${location}/${areaLoc}/${key}`), {
+                location,
+                area: JSON.parse(area).area,
+                timeFrom,
+                // timeFromInMilli:new Date(timeFrom).getTime(),
+                timeTo,
+                date: dateM,
+                // timeToInMilli:new Date(timeTo).getTime(),
+                slots,
+               
+                key,
+   
+                status: 'booked',
+            
+            })
+
+
+
+            }
+
+          else if((tsfrom >= tdfrom) && (tsTo >= tdTo)){
+                     alert('Your Answer has beeen Submitted--!')
+
+            let areaLoc = JSON.parse(area).area
+            console.log(areaLoc)
+            const db = getDatabase()
+            const key2 = push(child(ref(db), 'admin/booking')).key;
+            push(ref(db, `users/booking/${location}/${areaLoc}/${key}`), {
+                location,
+                area: JSON.parse(area).area,
+                timeFrom,
+                // timeFromInMilli:new Date(timeFrom).getTime(),
+                timeTo,
+                date: dateM,
+                // timeToInMilli:new Date(timeTo).getTime(),
+                slots,
+               
+                key,
+   
+                status: 'booked',
+            
+            })
+                    
+                }
+
+
+            // alert('No Data.. is Available')
             
         }
     
     
+
+
+
+
+
         // if (dataCheck) {
         //     let tdfrom=new Date(dataCheck.timeFrom).getTime()
         //     console.log(tdfrom)
@@ -353,7 +469,7 @@ const Booking = () => {
 
     //     }) : console.log('')
     // }
-
+console.log(data2)
     useEffect(() => {
         let areaLoc2 = area ? JSON.parse(area).area : ''
         let tf = new Date(timeFrom).getTime()
@@ -395,6 +511,7 @@ const Booking = () => {
         <Paper>
             <div>
                 <Card className='createparking'>
+                <div className='selectInput' >
                     <Box sx={{ maxWidth: 230, height: 90, marginTop: 2 }}>
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label">City Location</InputLabel>
@@ -449,16 +566,14 @@ const Booking = () => {
 
                     </Box>
 
-
-                    {/* <h1>  {status ? status.area : ''}</h1>
-                        <h1>  {status ? status.slots : ''}</h1> */}
-
-                    <div style={{ display: 'flex', marginTop: 60, height: 200, justifyContent: 'space-around' }}>
+                </div>
+                    <div style={{ display: 'flex', marginTop: 60, height: 550, justifyContent: 'space-around' }}>
                         <div className='slots'>
                             {
 
                                 boxes.map((val, i) => (
-                                    <Button variant='outlined' color='success' onClick={() => setOpen({ value: true, value2: false, id: val })} key={i}>{val}</Button>
+                                    <Button   style={{padding:20}} className='btnImg'  onClick={() => setOpen({ value: true, value2: false, id: val })} key={i}>
+<img className='btnImg1' src={img} /> <br/> <Typography className='text'> {val}</Typography>                        </Button>
 
                                 ))
 
@@ -469,28 +584,20 @@ const Booking = () => {
                                 <Card className='cardBook' >
 
                                     <Typography className='modaltext'>Date</Typography>
-                                    <TextField className='modalInp' placeholder='Time(From) ' type='datetime-local' onChange={e => setDateM(e.target.value)} /><br />
-                                    {/* <TextField className='modalInp' placeholder='Time(From) ' type='datetime-local' onChange={e => setTimeFrom(e.target.value)} /><br />
+                                    <TextField className='modalInp' placeholder='Time(From) ' type='date' onChange={e => setDateM(e.target.value)} /><br />
+                                    <Typography className='modaltext'>Froms</Typography>
+                                    <TextField className='modalInp' placeholder='Time(From) ' type='datetime-local' onChange={e => setTimeFrom(e.target.value)} /><br />
                                     <Typography className='modaltext'>To</Typography>
-                                    <TextField className='modalInp' placeholder='Time (To)' type='datetime-local' onChange={e => setTimeTo(e.target.value)} /><br /> */}
+                                    <TextField className='modalInp' placeholder='Time (To)' type='datetime-local' onChange={e => setTimeTo(e.target.value)} /><br />
                                     <Button variant='contained' className='modalbtn' color='primary' onClick={() => submitData(open.id)} >Submit</Button>
                                 </Card>
 
                             </Modal>
                         </div>
-                        {/* <Boxes value={status ? status.slots : 0 } /> */}
-                        {/* <h1>{finalSlotsCheck ? finalSlotsCheck : 'Loading..'}</h1> */}
+        
 
                     </div>
-                    {/* <Button onClick={checkd}>Check</Button> */}
-                    {/* <TextField placeholder='Parking Slots' type='number' onChange={e => setSlots(e.target.value)} /><br /> */}
-                    {/* <Typography>From</Typography>
-                    <TextField placeholder='Time(From) ' type='datetime-local' onChange={e => setTimeFrom(e.target.value)} /><br />
-                    <Typography>To</Typography>
-                    <TextField placeholder='Time (To)' type='datetime-local' onChange={e => setTimeTo(e.target.value)} /><br /> */}
-
-                    {/* <Button variant='contained' color='primary' onClick={BookingNow} >Book Now</Button> */}
-                </Card>
+                              </Card>
             </div>
 
         </Paper>
@@ -500,28 +607,3 @@ const Booking = () => {
 export default Booking
 
 
-
-// const Boxes = (props) => {
-//     const [boxes,setBoxes]=useState([])
-
-// let arr=[]
-//     for(let i=0; i<20; i++){
-// arr.push(i)
-
-
-//      }
-// setBoxes(arr)
-
-//  return (
-// <>
-// {
-//     boxes ? boxes.map((val)=>(
-//         <h6>{val}</h6>
-//     )):''
-// }
-
-// </>
-
-
-//     )
-// }

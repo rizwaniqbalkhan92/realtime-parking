@@ -1,13 +1,15 @@
+
 .cards{
     width: 100% !important;
     height: 100vh !important;
-    background-color: aqua !important;
+    background-color: '#847E7E' !important;
     display: flex;
     justify-content: space-around;
 }
 .card1{
     width: 17% !important;
     height: 100vh !important;
+    
 }
 .card2{
     width: 80% !important;
@@ -16,7 +18,8 @@
 .feedback{
     width: 80% !important;
     margin: 100px auto;
-    height: 90% !important;
+    /* height:700 !important; */
+    overflow:'scroll'
 }
 .message{
     display: flex !important;
@@ -26,7 +29,7 @@
 .btns{
     margin-top: 30px;
 
-    height: 30% !important;
+    height: 25% !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -75,20 +78,23 @@ background-color: red !important;
 .slots{
 display: flex;
 flex-wrap: wrap;
-width: 400px !important;
-/* height: 300px; */
+width: 960px !important;
+height: 600px;
 margin: 0px auto;
 /* border: 1px solid red; */
 justify-content: space-between;
+overflow:'scroll';
+
 }
 .slot{
     width: 70px;
     height: 70px;
-    border: 1px solid greenyellow;
+    /* border: 1px solid greenyellow; */
+    overflow:'scroll'!important;
 }
 .cardBook{
     width:400px;
-    height: 320px;
+    height: 420px;
     margin: 100px auto;
 }
 .modalInp{
@@ -100,4 +106,30 @@ justify-content: space-between;
 }
 .modalbtn{
     margin: 10px 150px !important;
+}
+.selectInput{
+    display:'flex' !important;
+    flex-direction:'row' !important;
+    justify-content:'space-between' !important;
+
+}
+.btnImg{
+   width:120px !important;
+   height:100px !important;
+   display:'flex' !important;
+   flex-direction:'column ' !important;
+   margin-left:15px;
+  /* background-color: #333333  !important; */
+}
+.btnImg1{
+    width:100px !important;
+    height: 100px !important;
+    transform: rotate(90deg);
+    margin-left:20 !important;
+},
+text:{
+    font-size:30px;
+    /* position:'relative';
+    left:20px; */
+    z-index:1 !important;
 }

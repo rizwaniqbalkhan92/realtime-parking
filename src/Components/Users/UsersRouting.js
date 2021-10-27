@@ -21,19 +21,16 @@ const history=useHistory()
 <Link to='/booking'>Booking</Link>
 
 </Button>
-<Button variant='contained' color='success'>
+<Button variant='contained' color='info'>
 <Link to='/parkingavailabe'>Parking Availabe</Link>
 
 </Button>
+
 <Button variant='contained' color='success'>
 <Link to='/feedback'>Feedback</Link>
 
 </Button>
-<Button variant='contained' color='success'>
-<Link to='/feedback'>Feedback</Link>
-
-</Button>
-<Button variant='contained' onClick={()=>localStorage.clear()}  color='success'>
+<Button variant='contained' onClick={()=>history.push('/')}  color='info'>
 <Link to='/signIn'>Logout</Link>
 
 </Button>

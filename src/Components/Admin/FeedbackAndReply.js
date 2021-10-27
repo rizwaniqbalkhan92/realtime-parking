@@ -86,7 +86,7 @@ const MessageSend=(uid,uemail,message)=>{
 
             
             
-            <div className='message1'>
+            <div className='message1'  style={{overFlow:'scroll',height:800}}>
             {
                 finalData ? finalData.map((value)=>(
                     <Card className='meesage2'>

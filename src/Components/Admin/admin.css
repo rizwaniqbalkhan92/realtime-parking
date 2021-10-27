@@ -48,9 +48,9 @@ height: 30% !important;
 }
 
 .createparking{
-width: 40% !important;
-
-background-color: lightblue !important;
+width: 90% !important;
+height:90% !important;
+/* background-color: lightblue !important; */
 margin: 10px auto;
 display: flex;
 justify-content: space-around;

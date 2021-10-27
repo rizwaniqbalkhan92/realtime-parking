@@ -58,8 +58,8 @@ console.log(dataFinal)
     return (
         <div>
             <h1>Feedbacks</h1>
-            <h1>Feedbacks and reply</h1>
-            <Card className='feedback'>
+        
+            <Card className='feedback' style={{height:800,overFlow:'scroll'}}>
 
                 {
                     dataFinal !==null && dataFinal !==undefined  ? dataFinal.map((val) => (
